@@ -1,47 +1,57 @@
-Here's a README file template for your repository, based on the information you provided. This template includes instructions for setting up and running the scripts necessary for your anomaly detection analysis using R:
+# Anomaly-Based Intrusion Detection System
 
-```markdown
-# Anomaly-Based Intrusion Detection for Cyber-physical Systems
+This repository contains the R scripts and datasets necessary for anomaly detection in cyber-physical systems using Hidden Markov Models (HMMs). Our approach involves analyzing household electricity consumption data to detect anomalies, thereby enhancing the security of these systems.
 
-This repository contains the implementation of an anomaly detection system for analyzing household electricity consumption data using a Hidden Markov Model (HMM). The dataset and R scripts required for the analysis are included.
 ## Research Report
 
 A detailed research report is available in this repository that analyzes the results of the anomaly detection model. This report provides insights into the methodology, results, and implications of the findings.
 
-## Prerequisites
+## Getting Started
 
-Before you begin, ensure you have R installed on your machine. You can download R from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
+### Prerequisites
 
-## Dataset
+Ensure you have R installed on your machine along with the necessary packages used in the scripts. You can install R from [CRAN](https://cran.r-project.org/mirror-howto.html).
 
-The dataset is included in the repository within a ZIP file named `dataset.zip`. Please extract this file to access the dataset.
+### Dataset
 
-## Installation
+The dataset required for this project is included in the repository within a ZIP file named `dataset.zip`. Extract this file in a directory of your choice.
 
-Clone this repository to your local machine using the following command:
-```
-git clone [URL-to-this-repository]
-```
-Navigate to the repository directory:
-```
-cd [repository-name]
-```
+### Setting Up Your Workspace
 
-## Setting Up Your Environment
+1. **Set the Working Directory**: Before running the scripts, make sure to set the working directory to the location where you have your dataset. You can set this in each R script by modifying the `setwd()` function call at the beginning of the files.
 
-Set the working directory in the beginning of each R script to the location of the extracted dataset files on your system. Modify the `setwd()` command at the start of each R script to point to your dataset directory.
+    ```R
+    setwd("path/to/your/dataset/directory")
+    ```
 
-## Running the Scripts
+    Replace `"path/to/your/dataset/directory"` with the path where you have extracted your dataset.
 
-1. **Feature Scaling:**
-   First, run the `featureScalling.R` script to standardize the features of the dataset. This script prepares the data for better performance in anomaly detection.
-   ```
-   Rscript featureScalling.R
-   ```
+### Running the Scripts
 
-2. **HMM Training and Anomaly Detection:**
-   After scaling the features, run the `HMMTrainingAnamolyDetection.R` script to train the Hidden Markov Model and perform anomaly detection.
-   ```
-   Rscript HMMTrainingAnamolyDetection.R
-   ```
+Follow the steps below to execute the analysis:
+
+1. **Feature Scaling**: Run the `featureScalling.R` script first. This script prepares the dataset by scaling the features, making them suitable for analysis.
+   
+    ```bash
+    Rscript featureScalling.R
+    ```
+
+2. **HMM Training and Anomaly Detection**: After scaling the features, run the `HMMTrainingAnomalyDetection.R` script. This script will train the Hidden Markov Model and perform anomaly detection on the scaled data.
+   
+    ```bash
+    Rscript HMMTrainingAnomalyDetection.R
+    ```
+
+## System Requirements
+
+This software has been tested on the following system configurations:
+
+- Operating System: Windows 10, Ubuntu 20.04
+- R Version: 4.0.5
+- RAM: 8GB minimum recommended
+
+## Support
+
+If you encounter any problems or have feedback, please open an issue in this repository.
+
 
